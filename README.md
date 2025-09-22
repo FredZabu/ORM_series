@@ -77,12 +77,39 @@ def run():
     restaurant.save() # After initializing data to the fields the object is then saved to the database
 ```
 
+#### OR
+
+Using the,
+
+- objects.create() method.
+
+```python
+def run():
+    Restaurant.objects.create(name = 'Piza Shop',latitude = 50.2, longitude = 50.2, date_opened = timezone.now(), restaurant_type = Restaurant.TypeChoices.ITALIAN)
+```
+
 ### Fetching all data in the database table
 
 This code below returns a querySet containing all rows available in the database table.
 
 ```python
 def run():
-    restaurant = Restaurant.objects.all()
+    restaurant = Restaurant.objects.all() # This returns a querySet that has all table rows.
     print(restaurant)
+```
+
+This below fetches the first row in the database table.
+
+```python
+def run():
+    restaurant = Restaurant.objects.first()
+```
+
+#### OR
+
+Using the indexing method.
+
+```python
+def run():
+    restaurant = Restaurant.objects.all()[0]
 ```
