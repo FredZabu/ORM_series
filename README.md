@@ -76,3 +76,13 @@ def run():
 
     restaurant.save() # After initializing data to the fields the object is then saved to the database
 ```
+
+### Fetching all data in the database table
+
+This code below returns a querySet containing all rows available in the database table.
+
+```python
+def run():
+    restaurant = Restaurant.objects.all()
+    print(restaurant)
+```
