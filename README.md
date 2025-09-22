@@ -60,3 +60,19 @@ class Sale(models.Model):
 - Querying database with Django to get data.
 - Creating rows with Django ORM.
 - Querying Foreign Keys with ORM.
+
+#### Creating a new row in the database table
+
+This python code below creates a new row in the table
+
+```python
+def run():
+    restaurant = Restaurant() # first creates an instance of the Restaurant model
+    restaurant.name = 'My Italian Restaurant' # This field is newly created on a fly
+    restaurant.latitude = 50.2
+    restaurant.longitude = 50.2
+    restaurant.date_opened = timezone.now()
+    restaurant.restaurant_type = Restaurant.TypeChoices.ITALIAN
+
+    restaurant.save() # After initializing data to the fields the object is then saved to the database
+```
