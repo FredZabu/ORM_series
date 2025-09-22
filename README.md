@@ -54,3 +54,9 @@ class Sale(models.Model):
     income = models.DecimalField(max_digits=8, decimal_places=2)
     datetime = models.DateTimeField()
 ```
+
+## Creating And Querying Data
+
+- Querying database with Django to get data.
+- Creating rows with Django ORM.
+- Querying Foreign Keys with ORM.
