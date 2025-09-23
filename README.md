@@ -113,3 +113,55 @@ Using the indexing method.
 def run():
     restaurant = Restaurant.objects.all()[0]
 ```
+
+### Working with Foreign Keys.
+
+The code below creates a Rating instance or table row with User ID and Restaurant ID being a foreign key which depicts a one-to-many relationship.
+
+```python
+def run():
+    restaurant = Restaurant.objects.first() # get a reference to a specific row or restaurant
+    user = User.objects.first() # reference to a specific user
+    Rating.objects.create(restaurant = restaurant, user = user, rating = 3) #creates the rating object
+```
+
+### Working filtering rows in the database table
+
+- Equal-to
+  This return the Rating rows whose rating is equal to 5.
+
+```python
+def run():
+    print(Rating.objects.filter(rating = 5))
+```
+
+- Greater-than
+  This returns Rating rows whose rating is greater-than 5.
+
+```python
+def run():
+    print(Rating.objects.filter(rating__gt = 5))
+```
+
+- Greater-than-or-equal-to (rating >= 5)
+  This returns one or more rows from the database Rating table whose rating >= 5
+
+```python
+def run():
+    print(Rating.objects.filter(rating__gte = 5))
+```
+
+- Less-than (rating < 5)
+  This returns one or more rows from the Rating table whose rating < 5
+
+```python
+def run():
+    print(Rating.objects.filter(rating__lt = 5))
+```
+
+#### OR
+
+```python
+def run():
+    print(Rating.objects.filter(rating__lte = 5)) # returns rows that are <= 5
+```
