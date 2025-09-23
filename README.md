@@ -165,3 +165,14 @@ def run():
 def run():
     print(Rating.objects.filter(rating__lte = 5)) # returns rows that are <= 5
 ```
+
+### Updating Fields in the database table
+
+This updates the name field of a particular row in the database table named Restaurant.
+
+```python
+def run():
+    restaurant = Restaurant.objects.first() # returns the row reference
+    restaurant.name = "Cafe Javas" # use the object to rename its name field
+    restaurant.save() # saves the updated object to the database
+```
