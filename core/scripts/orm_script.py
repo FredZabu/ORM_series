@@ -3,4 +3,9 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 from django.db import connection
 def run():
-    print(Rating.objects.filter(rating = 5))
+    user = User.objects.first()
+    restaurant = Restaurant.objects.first()
+    rating = Rating(user=user, restaurant= restaurant, rating = 9)   
+    
+    rating.full_clean()
+    rating.save()
