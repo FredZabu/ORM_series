@@ -176,3 +176,24 @@ def run():
     restaurant.name = "Cafe Javas" # use the object to rename its name field
     restaurant.save() # saves the updated object to the database
 ```
+
+### Updating all specific column row
+
+This code below changes the value of the date_opened column for all rows.
+
+```python
+def run():
+    restaurant = Restaurant.objects.all() # returns all rows reference
+    restaurant.update(date_opened = timezone.now()) # use the object to update the column
+```
+
+### To delete
+
+This code deletes a specific row in the model
+
+```python
+def run():
+    restaurant = Restaurant.objects.first() # returns the row reference
+    restaurant.delete() # use the object to delete it.
+
+```

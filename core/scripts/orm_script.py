@@ -5,7 +5,7 @@ from django.db import connection
 def run():
     user = User.objects.first()
     restaurant = Restaurant.objects.first()
-    rating = Rating(user=user, restaurant= restaurant, rating = 9)   
+    print(restaurant.name)
     
-    rating.full_clean()
-    rating.save()
+    restaurant.name = "New Restaurant Name"
+    restaurant.save()
